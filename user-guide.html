@@ -98,7 +98,6 @@
   <a href="#settings">Settings Screen</a>
   <a href="#theme">Dark / Light Mode</a>
   <a href="#upgrade">Pro Plan</a>
-  <a href="#research">Research Screen</a>
   <h2>Troubleshooting</h2>
   <a href="#faq">Common Questions</a>
 </nav>
@@ -117,7 +116,7 @@
     <li><strong>Manages your full balance sheet</strong> — assets minus liabilities = your true net worth</li>
     <li><strong>Supports your whole family</strong> — separate profiles for every family member, each with their own plan</li>
   </ol>
-  <div class="tip"><p>💡 All your data is stored locally on your phone. Nothing is uploaded or shared. You own your data completely.</p></div>
+  <div class="tip"><p>💡 Your main profile's holdings, plan, and assets are securely stored in the cloud (Supabase) so they sync across reinstalls and devices. Child/family profiles are stored locally on this device. Your data is never sold or shared with third parties.</p></div>
 
   <h3>Free vs Pro</h3>
   <table>
@@ -165,7 +164,7 @@
   <div class="step"><span class="step-num">3</span>Enter your <strong>number of shares</strong>.</div>
   <div class="step"><span class="step-num">4</span>Tap <strong>Save</strong>. Your holding appears in the list with a live price and total value.</div>
 
-  <div class="tip"><p>💡 Prices are fetched from Yahoo Finance in real time. Tap the <strong>↻ Refresh</strong> button at the top of the Holdings screen to update all prices at once.</p></div>
+  <div class="tip"><p>💡 Prices are fetched from Yahoo Finance in real time. Pull down on the Holdings screen to refresh all prices at once.</p></div>
   <div class="warning"><p>⚠️ Free plan: you can track up to 3 holdings. The fourth tap on "Add Holding" will show the upgrade screen.</p></div>
 
   <h3>Supported Ticker Formats</h3>
@@ -185,7 +184,7 @@
 
   <div class="step"><span class="step-num">1</span>On the Portfolio screen, tap the <strong>📷 camera icon</strong> at the top right.</div>
   <div class="step"><span class="step-num">2</span>Choose <strong>Take Photo</strong> (point your camera at your broker app) or <strong>Choose from Library</strong> (if you already have a screenshot).</div>
-  <div class="step"><span class="step-num">3</span>You can select <strong>up to 3 images</strong> at once to import from multiple pages.</div>
+  <div class="step"><span class="step-num">3</span>You can select <strong>up to 10 images</strong> at once to import from multiple pages.</div>
   <div class="step"><span class="step-num">4</span>The AI reads the screenshot and extracts all ticker symbols and share counts. A review screen shows what it found.</div>
   <div class="step"><span class="step-num">5</span>Review the extracted holdings, remove any incorrect ones, then tap <strong>Add X Holdings</strong> to confirm.</div>
 
@@ -393,7 +392,7 @@
     <li>The graph appears automatically once you have at least 2 snapshots (i.e., you've opened the app on at least 2 different days with holdings)</li>
     <li>It tracks up to 365 days of history</li>
     <li>The percentage change shows growth since your first recorded snapshot</li>
-    <li>Hover over the graph to see individual data points</li>
+    <li>The first and last data points are marked with dots; the most recent value is shown above the chart</li>
   </ul>
   <div class="tip"><p>💡 Snapshots are captured whenever your portfolio value is calculated after a price refresh. Open the app and tap Refresh regularly to build a rich history.</p></div>
 
@@ -560,8 +559,9 @@
     <li><strong>Dark Mode toggle</strong> — switch between light and dark themes</li>
     <li><strong>User Guide</strong> — opens this guide in your browser</li>
     <li><strong>Privacy Policy</strong> — opens in your browser</li>
+    <li><strong>Financial Disclaimer</strong> — shown inline below the legal section</li>
     <li><strong>Contact Support</strong> — opens your email app</li>
-    <li><strong>Rate on Google Play</strong> — leave a review</li>
+    <li><strong>Rate on Google Play / App Store</strong> — leave a review (shows the appropriate store for your device)</li>
     <li><strong>App version &amp; package name</strong></li>
   </ul>
 
@@ -576,23 +576,15 @@
   <table>
     <tr><th>Plan</th><th>Monthly</th><th>Annual (save 40%)</th><th>Lifetime</th></tr>
     <tr><td>Solo (1 person)</td><td>$9.99/mo</td><td>$5.99/mo ($71.88/yr)</td><td>$299</td></tr>
-    <tr><td>Family 2</td><td>$15.99/mo</td><td>$9.59/mo ($115.08/yr)</td><td>$399</td></tr>
-    <tr><td>Family 3</td><td>$21.99/mo</td><td>$13.19/mo ($158.28/yr)</td><td>$499</td></tr>
-    <tr><td>Family 4</td><td>$26.99/mo</td><td>$16.19/mo ($194.28/yr)</td><td>$599</td></tr>
-    <tr><td>Family 5</td><td>$31.99/mo</td><td>$19.19/mo ($230.28/yr)</td><td>$699</td></tr>
+    <tr><td>Family 2</td><td>$15.99/mo</td><td>$9.59/mo ($115.08/yr)</td><td>$449</td></tr>
+    <tr><td>Family 3</td><td>$21.99/mo</td><td>$13.19/mo ($158.28/yr)</td><td>$599</td></tr>
+    <tr><td>Family 4</td><td>$26.99/mo</td><td>$16.19/mo ($194.28/yr)</td><td>$749</td></tr>
+    <tr><td>Family 5</td><td>$31.99/mo</td><td>$19.19/mo ($230.28/yr)</td><td>$899</td></tr>
   </table>
   <p>The paywall lets you select Solo or Family, pick the number of members, and choose monthly, annual, or lifetime billing. The annual plan saves 40%. The lifetime plan is a one-time payment — yours forever.</p>
 
   <h3>Restoring purchases</h3>
   <p>If you reinstall the app or switch phones, tap <strong>Restore purchases</strong> at the bottom of the paywall to recover your Pro access.</p>
-
-  <!-- RESEARCH -->
-  <h2 id="research">Research Screen</h2>
-  <p>The Research screen (accessed from the Holdings screen — look for the Research button at the top) provides AI-powered equity analysis for any stock.</p>
-  <div class="step"><span class="step-num">1</span>Type a ticker symbol and tap <strong>Search</strong>.</div>
-  <div class="step"><span class="step-num">2</span>The app fetches live price data (price, P/E ratio, market cap, 52-week high/low, volume) from Yahoo Finance.</div>
-  <div class="step"><span class="step-num">3</span>An AI-generated research report is produced covering business overview, key risks, growth catalysts, and a brief valuation commentary.</div>
-  <div class="warning"><p>⚠️ The AI research is for informational purposes only. It is not financial advice. Always do your own research before making investment decisions.</p></div>
 
   <!-- FAQ -->
   <h2 id="faq">Common Questions</h2>
@@ -613,10 +605,10 @@
   <p>Yes — all your data is stored locally. You can view and edit everything offline. Prices won't refresh until you reconnect, but your last-known prices remain displayed.</p>
 
   <h3>How do I delete my account?</h3>
-  <p>Since RetireSmart stores everything locally, "deleting your account" means uninstalling the app. There is no server-side account to delete. Go to <strong>Holdings → Sign out</strong> to clear your local session, or simply uninstall the app.</p>
+  <p>Your main profile data (holdings, plan, assets) is stored in our secure cloud database. To delete your account and all associated data, email <a href="mailto:desmondjiajunloy@gmail.com">desmondjiajunloy@gmail.com</a> with the subject "Account Deletion Request" and we will permanently remove your data within 30 days. You can sign out at any time via <strong>Portfolio → Sign out</strong>.</p>
 
   <h3>I switched to a new phone — how do I transfer my data?</h3>
-  <p>Data is stored locally and doesn't currently sync between devices. Use the <strong>📄 Export as PDF</strong> function to save a snapshot of your portfolio before switching phones, then re-enter them manually on the new device. Cloud sync is on the roadmap.</p>
+  <p>Your main profile (holdings, plan, assets, liabilities) is stored in the cloud and will restore automatically when you sign in on your new phone. Family member and child profiles are stored locally on the device — use <strong>📄 Export as PDF</strong> to save a snapshot of those profiles before switching, then re-enter them manually.</p>
 
   <h3>How do I share the PDF via WhatsApp or Gmail on Android?</h3>
   <p>On Android, tap Export as PDF, choose a folder (e.g. Downloads), then open your <strong>Files</strong> or <strong>My Files</strong> app. Find <code>RetireSmart_Portfolio.pdf</code>, long-press it, and tap <strong>Share</strong> to send it to any app. On iOS the share sheet opens immediately and you can attach the PDF directly to WhatsApp, Gmail, or any other app in one step.</p>
