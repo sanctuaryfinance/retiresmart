@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>RetireSmart – Complete User Guide</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+           background: #f2f6fa; color: #1c1c1e; }
+    .sidebar { position: fixed; top: 0; left: 0; width: 260px; height: 100vh;
+               background: #fff; border-right: 1px solid #e5e5ea;
+               overflow-y: auto; padding: 24px 0; }
+    .sidebar h2 { font-size: 13px; font-weight: 800; color: #8e8e93;
+                  text-transform: uppercase; letter-spacing: 0.8px;
+                  padding: 0 20px; margin-bottom: 8px; margin-top: 20px; }
+    .sidebar a { display: block; padding: 7px 20px; font-size: 14px; color: #1c1c1e;
+                 text-decoration: none; border-radius: 8px; margin: 1px 8px; }
+    .sidebar a:hover { background: #f2f6fa; }
+    .sidebar .brand { font-size: 18px; font-weight: 800; color: #0bc887;
+                      padding: 0 20px; margin-bottom: 4px; }
+    .sidebar .version { font-size: 11px; color: #8e8e93; padding: 0 20px; margin-bottom: 16px; }
+    .content { margin-left: 260px; padding: 40px 48px 80px; max-width: 900px; }
+    h1 { font-size: 32px; font-weight: 800; color: #1c1c1e; margin-bottom: 8px; }
+    h2 { font-size: 22px; font-weight: 700; color: #1c1c1e; margin: 48px 0 12px;
+         padding-top: 20px; border-top: 2px solid #e5e5ea; }
+    h3 { font-size: 17px; font-weight: 700; color: #1c1c1e; margin: 28px 0 8px; }
+    h4 { font-size: 14px; font-weight: 700; color: #3a3a3c; margin: 16px 0 6px; }
+    p { font-size: 15px; line-height: 1.7; color: #3a3a3c; margin-bottom: 12px; }
+    ul, ol { padding-left: 22px; margin-bottom: 14px; }
+    li { font-size: 15px; line-height: 1.7; color: #3a3a3c; margin-bottom: 4px; }
+    .tip { background: #0bc88712; border-left: 4px solid #0bc887; border-radius: 8px;
+           padding: 12px 16px; margin: 16px 0; }
+    .tip p { color: #065f46; margin: 0; font-size: 14px; }
+    .warning { background: #fef3c7; border-left: 4px solid #f59e0b; border-radius: 8px;
+               padding: 12px 16px; margin: 16px 0; }
+    .warning p { color: #92400e; margin: 0; font-size: 14px; }
+    .step { background: #fff; border-radius: 14px; padding: 20px;
+            margin-bottom: 14px; box-shadow: 0 2px 10px rgba(0,0,0,0.06); }
+    .step-num { display: inline-block; width: 28px; height: 28px; background: #0bc887;
+                color: #fff; border-radius: 50%; font-size: 13px; font-weight: 800;
+                text-align: center; line-height: 28px; margin-right: 10px; }
+    .badge { display: inline-block; background: #0bc88720; color: #065f46;
+             border-radius: 6px; padding: 2px 8px; font-size: 12px;
+             font-weight: 700; margin-left: 6px; }
+    .badge.pro { background: #f59e0b20; color: #92400e; }
+    .badge.free { background: #e5e5ea; color: #636366; }
+    code { background: #f2f6fa; border: 1px solid #e5e5ea; border-radius: 5px;
+           padding: 1px 6px; font-size: 13px; font-family: 'SF Mono', monospace; }
+    table { width: 100%; border-collapse: collapse; margin: 16px 0; }
+    th { background: #f2f6fa; font-size: 12px; font-weight: 700; text-transform: uppercase;
+         letter-spacing: 0.6px; color: #636366; padding: 10px 14px; text-align: left; }
+    td { padding: 10px 14px; font-size: 14px; border-bottom: 1px solid #e5e5ea; color: #3a3a3c; }
+    tr:last-child td { border-bottom: none; }
+    .screen-label { background: #1c1c1e; color: #fff; border-radius: 8px;
+                    padding: 3px 10px; font-size: 12px; font-weight: 700; margin-right: 6px; }
+    @media (max-width: 768px) {
+      .sidebar { display: none; }
+      .content { margin-left: 0; padding: 24px 20px 60px; }
+    }
+  </style>
+</head>
+<body>
+
+<nav class="sidebar">
+  <div class="brand">RetireSmart</div>
+  <div class="version">Complete User Guide · v1.0</div>
+  <h2>Getting Started</h2>
+  <a href="#overview">App Overview</a>
+  <a href="#onboarding">First Launch</a>
+  <a href="#navigation">Navigation</a>
+  <h2>Holdings Tab</h2>
+  <a href="#add-holding">Adding Holdings</a>
+  <a href="#screenshot-import">Screenshot Import</a>
+  <a href="#edit-holding">Editing Holdings</a>
+  <a href="#sections">Organising Sections</a>
+  <a href="#other-assets">Other Assets</a>
+  <a href="#liabilities">Liabilities</a>
+  <a href="#shared-assets">Shared Household</a>
+  <a href="#csv-export">Exporting Data</a>
+  <h2>Plan Tab</h2>
+  <a href="#net-worth-graph">Net Worth Graph</a>
+  <a href="#goal-tab">Goal Planner</a>
+  <a href="#forecast-tab">Forecast (Monte Carlo)</a>
+  <a href="#drawdown-tab">Retirement Drawdown</a>
+  <a href="#notifications">DCA Reminders</a>
+  <a href="#streak">Investment Streak</a>
+  <h2>Family Profiles</h2>
+  <a href="#family-overview">Family Overview</a>
+  <a href="#add-member">Adding Members</a>
+  <a href="#switching">Switching Profiles</a>
+  <a href="#child-profile">Child Profiles</a>
+  <h2>Settings & Account</h2>
+  <a href="#settings">Settings Screen</a>
+  <a href="#theme">Dark / Light Mode</a>
+  <a href="#upgrade">Pro Plan</a>
+  <a href="#research">Research Screen</a>
+  <h2>Troubleshooting</h2>
+  <a href="#faq">Common Questions</a>
+</nav>
+
+<div class="content">
+
+  <h1>RetireSmart — Complete User Guide</h1>
+  <p>Everything you need to know about using RetireSmart, from adding your first holding to running full Monte Carlo retirement simulations for your whole family.</p>
+
+  <!-- OVERVIEW -->
+  <h2 id="overview">App Overview</h2>
+  <p>RetireSmart is a personal finance and retirement planning app that lives entirely on your device. It does four things:</p>
+  <ol>
+    <li><strong>Tracks your investment portfolio</strong> — stocks, ETFs, real estate, cash, pensions, and more, all with live prices</li>
+    <li><strong>Models your retirement</strong> — goal planner, Monte Carlo simulation, and drawdown analysis</li>
+    <li><strong>Manages your full balance sheet</strong> — assets minus liabilities = your true net worth</li>
+    <li><strong>Supports your whole family</strong> — separate profiles for every family member, each with their own plan</li>
+  </ol>
+  <div class="tip"><p>💡 All your data is stored locally on your phone. Nothing is uploaded or shared. You own your data completely.</p></div>
+
+  <h3>Free vs Pro</h3>
+  <table>
+    <tr><th>Feature</th><th>Free</th><th>Pro</th></tr>
+    <tr><td>Holdings tracked</td><td>Up to 3</td><td>Unlimited</td></tr>
+    <tr><td>Asset types</td><td>Real Estate only</td><td>All types</td></tr>
+    <tr><td>Liabilities</td><td>Mortgage &amp; Taxes only</td><td>All types</td></tr>
+    <tr><td>Monte Carlo Forecast</td><td>❌</td><td>✅</td></tr>
+    <tr><td>Drawdown Planner</td><td>❌</td><td>✅</td></tr>
+    <tr><td>Family profiles</td><td>1 profile</td><td>Up to 5 profiles</td></tr>
+    <tr><td>Shared Household Assets</td><td>❌</td><td>✅</td></tr>
+    <tr><td>CSV Export</td><td>✅</td><td>✅</td></tr>
+    <tr><td>DCA Reminders</td><td>✅</td><td>✅</td></tr>
+  </table>
+
+  <!-- FIRST LAUNCH -->
+  <h2 id="onboarding">First Launch &amp; Sign In</h2>
+  <p>When you first open RetireSmart, you'll see an onboarding walkthrough explaining the key features. After that, you'll be asked to sign in.</p>
+  <div class="step"><span class="step-num">1</span><strong>Sign in</strong> — Enter your name and email address. No password required. RetireSmart uses a simple local sign-in; your credentials stay on your device.</div>
+  <div class="step"><span class="step-num">2</span><strong>Holdings Tab opens</strong> — You'll land on the Holdings screen with a sample SPY holding. This is just a placeholder — tap it to add your real share count.</div>
+  <div class="step"><span class="step-num">3</span><strong>Add your first real holding</strong> — Tap <strong>+ Add Holding</strong> and search for any stock or ETF by ticker symbol.</div>
+
+  <!-- NAVIGATION -->
+  <h2 id="navigation">Navigation</h2>
+  <p>RetireSmart has three main tabs at the top of the screen:</p>
+  <table>
+    <tr><th>Tab</th><th>What it does</th></tr>
+    <tr><td><span class="screen-label">Holdings</span></td><td>Your investment portfolio, other assets, liabilities, and net worth balance sheet</td></tr>
+    <tr><td><span class="screen-label">Plan</span></td><td>Retirement goal, Monte Carlo forecast, drawdown analysis, and net worth history</td></tr>
+    <tr><td><span class="screen-label">⚙️ Settings</span></td><td>Dark mode, privacy policy, support, and app info</td></tr>
+  </table>
+  <p>Within the <strong>Plan</strong> tab there are three sub-tabs:</p>
+  <ul>
+    <li><strong>Goal</strong> — Set your retirement target and inputs</li>
+    <li><strong>Forecast</strong> — Monte Carlo simulation <span class="badge pro">Pro</span></li>
+    <li><strong>Retirement</strong> — Drawdown calculator <span class="badge pro">Pro</span></li>
+  </ul>
+
+  <!-- HOLDINGS -->
+  <h2 id="add-holding">Adding Holdings Manually</h2>
+  <p>A "holding" is any stock, ETF, index fund, or other security you own.</p>
+
+  <div class="step"><span class="step-num">1</span>On the <strong>Holdings</strong> tab, tap <strong>+ Add Holding</strong> at the top.</div>
+  <div class="step"><span class="step-num">2</span>Type the <strong>ticker symbol</strong> — e.g. <code>AAPL</code> for Apple, <code>SPY</code> for the S&amp;P 500 ETF, <code>D05.SI</code> for DBS (Singapore). The app will fetch the live price and full name automatically.</div>
+  <div class="step"><span class="step-num">3</span>Enter your <strong>number of shares</strong>.</div>
+  <div class="step"><span class="step-num">4</span>Tap <strong>Save</strong>. Your holding appears in the list with a live price and total value.</div>
+
+  <div class="tip"><p>💡 Prices are fetched from Yahoo Finance in real time. Tap the <strong>↻ Refresh</strong> button at the top of the Holdings screen to update all prices at once.</p></div>
+  <div class="warning"><p>⚠️ Free plan: you can track up to 3 holdings. The fourth tap on "Add Holding" will show the upgrade screen.</p></div>
+
+  <h3>Supported Ticker Formats</h3>
+  <table>
+    <tr><th>Exchange</th><th>Format</th><th>Example</th></tr>
+    <tr><td>US (NYSE / NASDAQ)</td><td><code>TICKER</code></td><td>AAPL, MSFT, VTI</td></tr>
+    <tr><td>Singapore (SGX)</td><td><code>TICKER.SI</code></td><td>D05.SI, G13.SI</td></tr>
+    <tr><td>Hong Kong (HKEX)</td><td><code>TICKER.HK</code></td><td>0700.HK</td></tr>
+    <tr><td>London (LSE)</td><td><code>TICKER.L</code></td><td>HSBA.L</td></tr>
+    <tr><td>Australia (ASX)</td><td><code>TICKER.AX</code></td><td>CBA.AX</td></tr>
+    <tr><td>Malaysia (KLSE)</td><td><code>TICKER.KL</code></td><td>1155.KL</td></tr>
+  </table>
+
+  <!-- SCREENSHOT IMPORT -->
+  <h2 id="screenshot-import">Importing Holdings from a Screenshot <span class="badge pro">Pro</span></h2>
+  <p>Instead of typing each ticker manually, you can photograph or upload a screenshot of your broker's portfolio page and RetireSmart will extract all positions automatically using AI.</p>
+
+  <div class="step"><span class="step-num">1</span>On the Holdings screen, tap the <strong>📷 camera icon</strong> at the top right.</div>
+  <div class="step"><span class="step-num">2</span>Choose <strong>Take Photo</strong> (point your camera at your broker app) or <strong>Choose from Library</strong> (if you already have a screenshot).</div>
+  <div class="step"><span class="step-num">3</span>You can select <strong>up to 3 images</strong> at once to import from multiple pages.</div>
+  <div class="step"><span class="step-num">4</span>The AI reads the screenshot and extracts all ticker symbols and share counts. A review screen shows what it found.</div>
+  <div class="step"><span class="step-num">5</span>Review the extracted holdings, remove any incorrect ones, then tap <strong>Add X Holdings</strong> to confirm.</div>
+
+  <div class="tip"><p>💡 Works best with clean, high-resolution screenshots. Make sure the ticker symbols are clearly visible. Supported brokers include Interactive Brokers, Tiger Brokers, Moomoo, TD Ameritrade, and most others.</p></div>
+  <div class="warning"><p>⚠️ The AI import uses Google Gemini Vision. It reads ticker symbols and share counts but does NOT import prices — prices are always fetched live from Yahoo Finance.</p></div>
+
+  <!-- EDIT HOLDING -->
+  <h2 id="edit-holding">Editing and Deleting Holdings</h2>
+
+  <h3>Edit shares or name</h3>
+  <ol>
+    <li>Tap on any holding row to open the edit modal</li>
+    <li>Change the share count, name, or ticker</li>
+    <li>Tap <strong>Save</strong></li>
+  </ol>
+
+  <h3>Quick share edit</h3>
+  <p>If you see the hint <em>"Tap any holding below to add your share count"</em>, just tap the holding directly to open it and enter your shares.</p>
+
+  <h3>Delete a holding</h3>
+  <ol>
+    <li>Tap the holding to open it</li>
+    <li>Tap <strong>Delete</strong> at the bottom of the modal</li>
+    <li>Confirm deletion</li>
+  </ol>
+
+  <h3>Reorder holdings</h3>
+  <ol>
+    <li>Long-press any holding row until it lifts up (you'll feel a vibration)</li>
+    <li>Drag it to the desired position</li>
+    <li>Release to drop</li>
+  </ol>
+
+  <h3>Select multiple holdings</h3>
+  <p>Tap the <strong>☑</strong> checkbox icon at the top of the Holdings screen to enter selection mode. You can then select multiple holdings and delete them all at once.</p>
+
+  <h3>Clear all holdings</h3>
+  <p>Tap the <strong>Clear</strong> button at the top right of the Holdings screen. You'll be asked to confirm before anything is deleted.</p>
+
+  <h3>Undo</h3>
+  <p>After any change (add, edit, delete, reorder), tap <strong>↩ Undo</strong> in the top bar to reverse the last action.</p>
+
+  <!-- SECTIONS -->
+  <h2 id="sections">Organising Holdings into Sections <span class="badge pro">Pro</span></h2>
+  <p>Pro users can group holdings into labelled sections — e.g. "US Stocks", "Singapore", "Crypto", "Retirement Accounts".</p>
+
+  <h3>Add a section</h3>
+  <ol>
+    <li>Tap <strong>+ Add Section</strong> on the Holdings screen</li>
+    <li>Type a name for the section</li>
+    <li>Tap <strong>Save</strong></li>
+  </ol>
+
+  <h3>Move holdings between sections</h3>
+  <ol>
+    <li>Long-press a holding to start dragging</li>
+    <li>Drag it onto a different section header to move it there</li>
+  </ol>
+
+  <h3>Reorder sections</h3>
+  <ol>
+    <li>Long-press a section header until it lifts</li>
+    <li>Drag it to the desired position</li>
+  </ol>
+
+  <h3>Rename or delete a section</h3>
+  <p>Tap the <strong>✎ edit icon</strong> next to a section header to rename it, or tap the <strong>✕ delete icon</strong> to remove it (holdings inside are moved to the default section).</p>
+
+  <!-- OTHER ASSETS -->
+  <h2 id="other-assets">Other Assets</h2>
+  <p>Other Assets are non-stock investments that contribute to your net worth — real estate, cash, CPF/superannuation, pension funds, bonds, and more.</p>
+
+  <h3>Asset types available</h3>
+  <table>
+    <tr><th>Type</th><th>Icon</th><th>Examples</th><th>Plan</th></tr>
+    <tr><td>Real Estate</td><td>🏠</td><td>Home, investment property</td><td><span class="badge free">Free</span></td></tr>
+    <tr><td>Cash &amp; Bank</td><td>💵</td><td>Savings, fixed deposits</td><td><span class="badge pro">Pro</span></td></tr>
+    <tr><td>CPF / Retirement Fund</td><td>🏦</td><td>CPF OA/SA, EPF, 401k</td><td><span class="badge pro">Pro</span></td></tr>
+    <tr><td>Bonds</td><td>📄</td><td>Government bonds, SGS</td><td><span class="badge pro">Pro</span></td></tr>
+    <tr><td>Pension</td><td>🏛️</td><td>Defined benefit pension</td><td><span class="badge pro">Pro</span></td></tr>
+    <tr><td>Business</td><td>🏢</td><td>Shares in a private company</td><td><span class="badge pro">Pro</span></td></tr>
+    <tr><td>Crypto</td><td>₿</td><td>Bitcoin, Ethereum</td><td><span class="badge pro">Pro</span></td></tr>
+    <tr><td>Collectibles</td><td>🎨</td><td>Art, watches, wine</td><td><span class="badge pro">Pro</span></td></tr>
+    <tr><td>Custom</td><td>📋</td><td>Anything else</td><td><span class="badge pro">Pro</span></td></tr>
+  </table>
+
+  <h3>How to add an Other Asset</h3>
+  <div class="step"><span class="step-num">1</span>Scroll down on the Holdings screen past your stock portfolio to the <strong>Other Assets</strong> card.</div>
+  <div class="step"><span class="step-num">2</span>Tap <strong>+ Add Asset</strong> or tap the <strong>+</strong> button next to a specific category (e.g. 🏠 Real Estate).</div>
+  <div class="step"><span class="step-num">3</span>Choose the asset type, enter a name, and enter the current value.</div>
+  <div class="step"><span class="step-num">4</span>For CPF/Pension types, you can also enter a <strong>monthly payout amount</strong> — this shows up as passive income in your retirement plan.</div>
+  <div class="step"><span class="step-num">5</span>Tap <strong>Save</strong>.</div>
+
+  <div class="tip"><p>💡 The pie chart icon (📊) at the top of the Other Assets section shows a breakdown of your assets by category. Tap it to see the full chart.</p></div>
+
+  <!-- LIABILITIES -->
+  <h2 id="liabilities">Liabilities (Debts)</h2>
+  <p>Liabilities are debts subtracted from your assets to calculate your true net worth. Adding them gives you an accurate picture of what you actually own vs. what you owe.</p>
+
+  <h3>Liability types</h3>
+  <table>
+    <tr><th>Type</th><th>Icon</th><th>Examples</th><th>Plan</th></tr>
+    <tr><td>Mortgage</td><td>🏠</td><td>Home loan, apartment loan</td><td><span class="badge free">Free</span></td></tr>
+    <tr><td>Taxes</td><td>🧾</td><td>Income tax, property tax</td><td><span class="badge free">Free</span></td></tr>
+    <tr><td>Car Loan</td><td>🚗</td><td>Vehicle financing</td><td><span class="badge pro">Pro</span></td></tr>
+    <tr><td>Student Loan</td><td>🎓</td><td>University, study loans</td><td><span class="badge pro">Pro</span></td></tr>
+    <tr><td>Credit Card</td><td>💳</td><td>Outstanding card balance</td><td><span class="badge pro">Pro</span></td></tr>
+    <tr><td>Custom</td><td>📋</td><td>Any other debt</td><td><span class="badge pro">Pro</span></td></tr>
+  </table>
+
+  <h3>How to add a liability</h3>
+  <div class="step"><span class="step-num">1</span>Scroll down on the Holdings screen to the <strong>Liabilities</strong> card.</div>
+  <div class="step"><span class="step-num">2</span>Tap <strong>+ Add Liability</strong> or the <strong>+</strong> button next to a specific category.</div>
+  <div class="step"><span class="step-num">3</span>Enter the <strong>outstanding balance</strong> (how much you still owe) and an optional <strong>monthly repayment</strong> amount.</div>
+  <div class="step"><span class="step-num">4</span>Tap <strong>Save</strong>.</div>
+
+  <div class="tip"><p>💡 Liabilities are subtracted from your total assets to calculate net worth. The liabilities pie chart (📊) shows how your debt is split by category.</p></div>
+
+  <!-- SHARED ASSETS -->
+  <h2 id="shared-assets">Shared Household Assets <span class="badge pro">Pro</span></h2>
+  <p>Shared Household is a special section visible to <em>all</em> family members — for assets owned jointly by everyone, like the family home or a joint investment account. The value is split equally across all members.</p>
+
+  <h3>How to add a shared asset</h3>
+  <div class="step"><span class="step-num">1</span>You must have 2 or more family profiles and be on Pro.</div>
+  <div class="step"><span class="step-num">2</span>Scroll down to <strong>🏠 Shared Household</strong> between Other Assets and Liabilities.</div>
+  <div class="step"><span class="step-num">3</span>Tap <strong>+ Add Shared Asset</strong>.</div>
+  <div class="step"><span class="step-num">4</span>Enter the asset name, then its total value. The app splits it equally across all members.</div>
+
+  <!-- CSV EXPORT -->
+  <h2 id="csv-export">Exporting Your Data to CSV</h2>
+  <p>You can export all your holdings, assets, and liabilities as a CSV file — compatible with Excel, Google Sheets, and Numbers.</p>
+  <div class="step"><span class="step-num">1</span>Scroll to the very bottom of the Holdings screen.</div>
+  <div class="step"><span class="step-num">2</span>Tap <strong>📤 Export to CSV</strong>.</div>
+  <div class="step"><span class="step-num">3</span>The share sheet opens — save the file or share it to any app (email, Google Drive, etc.).</div>
+  <p>The CSV file contains three sections: Holdings (ticker, name, shares, price, value), Other Assets (name, type, value), and Liabilities (name, type, balance, repayment).</p>
+
+  <!-- NET WORTH GRAPH -->
+  <h2 id="net-worth-graph">Net Worth History Graph</h2>
+  <p>The Plan tab shows a line graph of your net worth over time. It records one snapshot per day when you open the app and refresh your prices.</p>
+  <ul>
+    <li>The graph appears automatically once you have at least 2 snapshots (i.e., you've opened the app on at least 2 different days with holdings)</li>
+    <li>It tracks up to 365 days of history</li>
+    <li>The percentage change shows growth since your first recorded snapshot</li>
+    <li>Hover over the graph to see individual data points</li>
+  </ul>
+  <div class="tip"><p>💡 Snapshots are captured whenever your portfolio value is calculated after a price refresh. Open the app and tap Refresh regularly to build a rich history.</p></div>
+
+  <!-- GOAL TAB -->
+  <h2 id="goal-tab">Goal Planner</h2>
+  <p>The Goal tab is where you configure your retirement plan inputs. These drive all the calculations in the Forecast and Drawdown tabs.</p>
+
+  <h3>Your Profile</h3>
+  <ul>
+    <li><strong>Current Age</strong> — your age today</li>
+    <li><strong>Years to Retirement</strong> — how many years until you want to retire (slider: 5–50)</li>
+    <li><strong>Retirement Age</strong> — calculated automatically from the above two</li>
+  </ul>
+
+  <h3>Retirement Goal ($)</h3>
+  <p>The total portfolio value you want to reach at retirement. This is the "number" — the amount that will sustain your lifestyle in retirement. A common rule of thumb is 25× your expected annual spending (the 4% rule).</p>
+
+  <h3>Growth Scenario</h3>
+  <table>
+    <tr><th>Scenario</th><th>Expected Annual Return</th><th>Use for</th></tr>
+    <tr><td>Conservative</td><td>~4–5%</td><td>Bond-heavy portfolio, near retirement</td></tr>
+    <tr><td>Base</td><td>~7–8%</td><td>Balanced portfolio (default)</td></tr>
+    <tr><td>Optimistic</td><td>~10–12%</td><td>100% equities, long time horizon</td></tr>
+  </table>
+  <div class="tip"><p>💡 The app uses the actual historical CAGR and volatility of each holding in your portfolio (fetched from Yahoo Finance) to produce a personalised growth rate — this is shown as "Personalised" if your holdings have enough history.</p></div>
+
+  <h3>Inflation Adjustment</h3>
+  <p>Toggle <strong>Adjust for inflation</strong> to see your goal in today's purchasing power. The default inflation rate is 3% — you can adjust this with the slider.</p>
+
+  <h3>Lump Sum &amp; Monthly Contributions</h3>
+  <ul>
+    <li><strong>Lump sum</strong> — a one-time deposit you plan to make (or your current cash savings outside of investments)</li>
+    <li><strong>Monthly income to invest (DCA)</strong> — how much you invest every month. This is added to your portfolio at each time step in the projection.</li>
+  </ul>
+
+  <h3>Semi-Retirement Mode</h3>
+  <p>Enable <strong>Semi-retire</strong> to model a two-phase retirement: first a period of reduced income (e.g. part-time work), then full retirement. Set:</p>
+  <ul>
+    <li><strong>Years to semi-retire</strong> — how many years until you go part-time</li>
+    <li><strong>Years of semi-retirement</strong> — how long the part-time phase lasts</li>
+    <li><strong>% of current contributions</strong> — how much you'll still invest during the part-time phase (e.g. 30% means you invest 30% of your current monthly DCA)</li>
+  </ul>
+
+  <h3>Reading the Result</h3>
+  <p>After the inputs are filled in, the app calculates:</p>
+  <ul>
+    <li><strong>Projected portfolio value</strong> at retirement</li>
+    <li><strong>% funded</strong> — how close your current portfolio is to the goal</li>
+    <li><strong>Monthly DCA gap</strong> — how much more you need to invest each month to hit the goal (shown as a red/green card)</li>
+  </ul>
+
+  <!-- FORECAST -->
+  <h2 id="forecast-tab">Forecast — Monte Carlo Simulation <span class="badge pro">Pro</span></h2>
+  <p>Monte Carlo simulation runs 1,000 random market scenarios using the historical volatility and return of your actual holdings. It shows you the <em>range</em> of possible outcomes — not just one average number.</p>
+
+  <h3>How to read the results</h3>
+  <ul>
+    <li><strong>Success rate</strong> — the percentage of simulations where you reached your goal. 85%+ is excellent; below 60% means you need to save more or retire later.</li>
+    <li><strong>Median outcome</strong> — the middle simulation result (50th percentile)</li>
+    <li><strong>Best / Worst case</strong> — 90th and 10th percentile outcomes</li>
+    <li><strong>Chart</strong> — fan chart showing the spread of outcomes over time. The green zone is the top 25% of scenarios; the red zone is the bottom 25%.</li>
+  </ul>
+
+  <div class="tip"><p>💡 A "success rate" of 100% doesn't mean you're guaranteed to succeed — it just means all 1,000 simulated histories hit your goal. Markets can always surprise. Aim for 85–95% success as a practical target.</p></div>
+
+  <h3>What drives the simulation?</h3>
+  <p>Each simulation randomly samples monthly returns from a log-normal distribution calibrated to your portfolio's weighted average return (CAGR) and annual standard deviation (volatility). These are calculated from 5 years of monthly historical prices for each holding you own.</p>
+
+  <!-- DRAWDOWN -->
+  <h2 id="drawdown-tab">Retirement Drawdown Calculator <span class="badge pro">Pro</span></h2>
+  <p>The Drawdown tab answers: <em>"If I retire with $X, how long will my money last?"</em> It's the flip side of the accumulation phase — now you're spending, not saving.</p>
+
+  <h3>Inputs</h3>
+  <ul>
+    <li><strong>Starting savings</strong> — defaults to your retirement goal amount from the Goal tab. Change it to any value.</li>
+    <li><strong>Monthly withdrawal</strong> — how much you plan to spend each month in retirement</li>
+    <li><strong>Annual withdrawal rate (%)</strong> — alternatively, express your spending as a % of the portfolio (4% is the classic "safe withdrawal rate")</li>
+    <li><strong>Post-retirement return (%)</strong> — how your portfolio grows during retirement (typically lower than accumulation phase, e.g. 2–4% for a conservative allocation)</li>
+    <li><strong>Time horizon (years)</strong> — how many years you need the money to last (e.g. 25 years if you retire at 65 and expect to live to 90)</li>
+  </ul>
+
+  <h3>Reading the result</h3>
+  <ul>
+    <li><strong>Green result</strong> — your money lasts the full time horizon. The remaining balance is shown.</li>
+    <li><strong>Red result</strong> — your money runs out. The year it depletes is shown.</li>
+    <li><strong>Chart</strong> — line chart showing your portfolio balance year by year</li>
+  </ul>
+
+  <!-- NOTIFICATIONS -->
+  <h2 id="notifications">DCA Monthly Reminders</h2>
+  <p>Set a monthly push notification to remind you to make your regular investment (Dollar Cost Averaging).</p>
+  <div class="step"><span class="step-num">1</span>Go to <strong>Plan</strong> tab → scroll to <strong>NOTIFICATIONS</strong> section.</div>
+  <div class="step"><span class="step-num">2</span>Toggle on <strong>Monthly Investment Reminder</strong>.</div>
+  <div class="step"><span class="step-num">3</span>Grant notification permission when prompted.</div>
+  <div class="step"><span class="step-num">4</span>Tap the day number you want to receive the reminder each month (e.g. tap <strong>1</strong> for the 1st of every month).</div>
+  <p>The reminder fires at 9:00 AM on your chosen day every month. Toggle it off to cancel.</p>
+
+  <!-- STREAK -->
+  <h2 id="streak">Investment Streak</h2>
+  <p>The streak tracker rewards consistency — it counts how many consecutive months you've made an investment.</p>
+  <ul>
+    <li>Each month, tap <strong>+ Log</strong> after you make your investment to record that month</li>
+    <li>Your streak counter increases by one</li>
+    <li>Miss a month and the streak resets to zero</li>
+    <li>The current month can be undone if you tapped it by mistake (tap <strong>Undo</strong>)</li>
+    <li>Past months cannot be edited — the streak is honest!</li>
+  </ul>
+
+  <!-- FAMILY -->
+  <h2 id="family-overview">Family Overview <span class="badge pro">Pro</span></h2>
+  <p>When you have 2 or more family profiles, a <strong>📊 Overview</strong> chip appears at the left of the profile bar. Tap it to see a summary of all members' net worth in one place.</p>
+  <p>The overview shows each member's name, profile type (adult/child), and their last-known cached net worth. It's updated whenever you switch to that member's profile.</p>
+
+  <h2 id="add-member">Adding Family Members <span class="badge pro">Pro</span></h2>
+  <div class="step"><span class="step-num">1</span>Tap the <strong>+ Add</strong> chip in the profile bar (requires Pro).</div>
+  <div class="step"><span class="step-num">2</span>Enter a name for the new profile (e.g. "Spouse", "Sarah").</div>
+  <div class="step"><span class="step-num">3</span>Choose <strong>Adult</strong> or <strong>Child</strong>.</div>
+  <div class="step"><span class="step-num">4</span>Tap <strong>Add Profile</strong>. The app immediately switches to the new profile with a clean starting point.</div>
+  <p>Each profile has its own completely separate holdings, assets, liabilities, and retirement plan. Switching profiles saves the current one and loads the new one instantly.</p>
+
+  <h2 id="switching">Switching Between Profiles</h2>
+  <p>Tap any name chip in the profile bar at the top of the screen. The app saves your current profile and loads the selected one. You can also rename or delete profiles from the <strong>📊 Overview</strong> modal.</p>
+
+  <div class="warning"><p>⚠️ Always wait for the screen to finish loading before tapping another profile. Rapid switching during a price refresh may cause a brief delay.</p></div>
+
+  <h2 id="child-profile">Child Profiles</h2>
+  <p>Child profiles work slightly differently from adult profiles:</p>
+  <ul>
+    <li>The Plan tab shows <strong>Investment Goal</strong> instead of Retirement Goal</li>
+    <li>The time horizon goes up to 60 years (for long-term education or wealth transfer goals)</li>
+    <li>The Drawdown tab is hidden (not applicable for children)</li>
+    <li>The goal is labelled "Target at age X" instead of "Retire at X"</li>
+    <li>Default goal is $100,000 over 20 years — suitable for an education fund</li>
+  </ul>
+
+  <!-- SETTINGS -->
+  <h2 id="settings">Settings Screen</h2>
+  <p>Tap <strong>⚙️ Settings</strong> in the main tab bar to access:</p>
+  <ul>
+    <li><strong>Subscription status</strong> — shows Free or Pro, with an Upgrade button for free users</li>
+    <li><strong>Dark Mode toggle</strong> — switch between light and dark themes</li>
+    <li><strong>Privacy Policy</strong> — opens in your browser</li>
+    <li><strong>Contact Support</strong> — opens your email app</li>
+    <li><strong>Rate on Google Play</strong> — leave a review</li>
+    <li><strong>App version &amp; package name</strong></li>
+  </ul>
+
+  <h2 id="theme">Dark / Light Mode</h2>
+  <p>RetireSmart fully supports both dark and light mode. Toggle it in <strong>⚙️ Settings → Dark Mode</strong>. Your preference is saved and restored on every launch.</p>
+
+  <!-- UPGRADE -->
+  <h2 id="upgrade">Upgrading to Pro</h2>
+  <p>Tap <strong>Upgrade</strong> in Settings, or tap the upgrade banner on the Holdings screen, or tap the 🔒 lock on any Pro feature.</p>
+
+  <h3>Pricing</h3>
+  <table>
+    <tr><th>Plan</th><th>Monthly</th><th>Annual (save 40%)</th><th>Lifetime</th></tr>
+    <tr><td>Solo (1 person)</td><td>$9.99/mo</td><td>$5.99/mo ($71.88/yr)</td><td>$299</td></tr>
+    <tr><td>Family 2</td><td>$15.99/mo</td><td>$9.59/mo ($115.08/yr)</td><td>$399</td></tr>
+    <tr><td>Family 3</td><td>$21.99/mo</td><td>$13.19/mo ($158.28/yr)</td><td>$499</td></tr>
+    <tr><td>Family 4</td><td>$26.99/mo</td><td>$16.19/mo ($194.28/yr)</td><td>$599</td></tr>
+    <tr><td>Family 5</td><td>$31.99/mo</td><td>$19.19/mo ($230.28/yr)</td><td>$699</td></tr>
+  </table>
+  <p>The paywall lets you select Solo or Family, pick the number of members, and choose monthly, annual, or lifetime billing. The annual plan saves 40%. The lifetime plan is a one-time payment — yours forever.</p>
+
+  <h3>Restoring purchases</h3>
+  <p>If you reinstall the app or switch phones, tap <strong>Restore purchases</strong> at the bottom of the paywall to recover your Pro access.</p>
+
+  <!-- RESEARCH -->
+  <h2 id="research">Research Screen</h2>
+  <p>The Research screen (accessed from the Holdings screen — look for the Research button at the top) provides AI-powered equity analysis for any stock.</p>
+  <div class="step"><span class="step-num">1</span>Type a ticker symbol and tap <strong>Search</strong>.</div>
+  <div class="step"><span class="step-num">2</span>The app fetches live price data (price, P/E ratio, market cap, 52-week high/low, volume) from Yahoo Finance.</div>
+  <div class="step"><span class="step-num">3</span>An AI-generated research report is produced covering business overview, key risks, growth catalysts, and a brief valuation commentary.</div>
+  <div class="warning"><p>⚠️ The AI research is for informational purposes only. It is not financial advice. Always do your own research before making investment decisions.</p></div>
+
+  <!-- FAQ -->
+  <h2 id="faq">Common Questions</h2>
+
+  <h3>My prices aren't updating — what do I do?</h3>
+  <p>Tap the <strong>↻ Refresh</strong> button at the top of the Holdings screen. If prices still don't update, check your internet connection. Yahoo Finance occasionally has brief outages — try again in a few minutes.</p>
+
+  <h3>I added the wrong ticker — how do I fix it?</h3>
+  <p>Tap the holding row to open the edit modal, then change the ticker to the correct one. The price will refresh automatically when you save.</p>
+
+  <h3>The screenshot import didn't find my holdings — why?</h3>
+  <p>Make sure the screenshot clearly shows the ticker symbols. Cropped or blurry screenshots may miss some positions. Try a higher-quality screenshot or add holdings manually.</p>
+
+  <h3>My Monte Carlo success rate is 0% — is that right?</h3>
+  <p>If your goal is very high compared to your current portfolio and you have few years to retire, the success rate can be near 0%. This is an honest answer — increase your monthly contributions, lower your goal, or extend your retirement timeline.</p>
+
+  <h3>Can I use the app without internet?</h3>
+  <p>Yes — all your data is stored locally. You can view and edit everything offline. Prices won't refresh until you reconnect, but your last-known prices remain displayed.</p>
+
+  <h3>How do I delete my account?</h3>
+  <p>Since RetireSmart stores everything locally, "deleting your account" means uninstalling the app. There is no server-side account to delete. Go to <strong>Holdings → Sign out</strong> to clear your local session, or simply uninstall the app.</p>
+
+  <h3>I switched to a new phone — how do I transfer my data?</h3>
+  <p>Data is stored locally and doesn't currently sync between devices. Use the <strong>📤 Export to CSV</strong> function to export your holdings before switching phones, then re-enter them manually on the new device. Cloud sync is on the roadmap.</p>
+
+  <h3>The "Upgrade to Pro" button isn't working</h3>
+  <p>RevenueCat (the payment system) requires a production build to process real payments — it won't work in development/Expo Go mode. Once the app is published on the App Store or Google Play, purchases will work correctly.</p>
+
+  <h3>How do I cancel my subscription?</h3>
+  <p>Subscriptions are managed by Google Play or the Apple App Store. To cancel:</p>
+  <ul>
+    <li><strong>Android</strong>: Google Play Store → Menu → Subscriptions → RetireSmart → Cancel</li>
+    <li><strong>iOS</strong>: Settings → Apple ID → Subscriptions → RetireSmart → Cancel</li>
+  </ul>
+
+  <div style="margin-top: 60px; padding-top: 24px; border-top: 1px solid #e5e5ea;">
+    <p style="color: #8e8e93; font-size: 13px;">RetireSmart User Guide · For support, email <a href="mailto:desmondjiajunloy@gmail.com" style="color: #0bc887;">desmondjiajunloy@gmail.com</a></p>
+    <p style="color: #8e8e93; font-size: 12px; margin-top: 4px;">This guide is for educational purposes. RetireSmart does not provide financial advice.</p>
+  </div>
+
+</div>
+</body>
+</html>
