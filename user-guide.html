@@ -64,7 +64,7 @@
 
 <nav class="sidebar">
   <div class="brand">RetireSmart</div>
-  <div class="version">Complete User Guide · v1.4</div>
+  <div class="version">Complete User Guide · v1.5</div>
   <h2>Getting Started</h2>
   <a href="#overview">App Overview</a>
   <a href="#onboarding">First Launch</a>
@@ -384,10 +384,20 @@
     <li>Callout labels point outward from each segment — showing the <strong>ticker</strong> and <strong>allocation %</strong></li>
     <li>Holdings beyond the top 7 are grouped into an <strong>Others</strong> segment</li>
     <li>The centre shows your total portfolio value</li>
-    <li>The card also shows a <strong>Retirement Goal progress bar</strong> (% funded) and a monthly DCA suggestion if you haven't reached your goal yet</li>
+    <li>The card shows a <strong>Retirement Goal progress bar</strong> (% funded) and a monthly DCA breakdown across three market scenarios</li>
     <li>A legend below the chart lists each holding with its dollar value and exact percentage</li>
   </ul>
-  <div class="tip"><p>💡 The allocation chart only appears when at least one holding has a value greater than $0. Add your share counts to see your real allocation.</p></div>
+
+  <h3>3-Scenario DCA Breakdown</h3>
+  <p>Below the allocation chart and goal progress bar, the Portfolio tab shows how much you'd need to invest per month to hit your retirement goal under each market scenario:</p>
+  <table>
+    <tr><th>Scenario</th><th>Nominal Return</th><th>What it means</th></tr>
+    <tr><td>🟠 Conservative</td><td>7%/yr</td><td>Lower-growth markets — you need to save more</td></tr>
+    <tr><td>🟢 Base</td><td>10%/yr</td><td>Long-run average equity return — the middle ground</td></tr>
+    <tr><td>🔵 Optimistic</td><td>13%/yr</td><td>Strong-growth markets — you can save less</td></tr>
+  </table>
+  <p>Each row shows the required monthly DCA (or "On track 🎯" if you're already funded). These numbers account for your existing portfolio and match the DCA figures in the Planner tab — the same starting portfolio, same real rates, same goal.</p>
+  <div class="tip"><p>💡 The allocation chart only appears when at least one holding has a value greater than $0. Add your share counts to see your real allocation and DCA breakdown.</p></div>
 
   <!-- NET WORTH GRAPH -->
   <h2 id="net-worth-graph">Net Worth History Graph</h2>
@@ -416,21 +426,23 @@
 
   <h3>Growth Scenario</h3>
   <table>
-    <tr><th>Scenario</th><th>Expected Annual Return</th><th>Use for</th></tr>
-    <tr><td>Conservative</td><td>~4–5%</td><td>Bond-heavy portfolio, near retirement</td></tr>
-    <tr><td>Base</td><td>~7–8%</td><td>Balanced portfolio (default)</td></tr>
-    <tr><td>Optimistic</td><td>~10–12%</td><td>100% equities, long time horizon</td></tr>
+    <tr><th>Scenario</th><th>Annual Return (nominal)</th><th>Use for</th></tr>
+    <tr><td>Conservative</td><td>7%</td><td>Bond-heavy portfolio, near retirement</td></tr>
+    <tr><td>Base</td><td>10%</td><td>Balanced / broad-market portfolio (default)</td></tr>
+    <tr><td>Optimistic</td><td>13%</td><td>100% equities, long time horizon</td></tr>
   </table>
-  <div class="tip"><p>💡 The app uses the actual historical CAGR and volatility of each holding in your portfolio (fetched from Yahoo Finance) to produce a personalised growth rate — this is shown as "Personalised" if your holdings have enough history.</p></div>
+  <div class="tip"><p>💡 These scenario rates (7 / 10 / 13%) are fixed market return assumptions used for the Goal Planner and Portfolio DCA projections. The actual historical CAGR of your holdings (fetched from Yahoo Finance) is used exclusively for the Monte Carlo Forecast — it does not change the plan scenario rates.</p></div>
+  <div class="tip"><p>💡 When <strong>Adjust for inflation</strong> is on, the app automatically deducts the inflation rate from each scenario's nominal return to compute a real rate — so the DCA numbers in the Planner and Portfolio tab always stay consistent with each other.</p></div>
 
   <h3>Inflation Adjustment</h3>
   <p>Toggle <strong>Adjust for inflation</strong> to see your goal in today's purchasing power. The default inflation rate is 3% — you can adjust this with the slider.</p>
 
   <h3>Lump Sum &amp; Monthly Contributions</h3>
   <ul>
-    <li><strong>Lump sum</strong> — a one-time deposit you plan to make (or your current cash savings outside of investments)</li>
-    <li><strong>Monthly income to invest (DCA)</strong> — how much you invest every month. This is added to your portfolio at each time step in the projection.</li>
+    <li><strong>Lump sum</strong> — a one-time deposit you plan to make (or current cash savings outside of investments). Automatically combined with your existing retirement portfolio value so the whole starting balance compounds together.</li>
+    <li><strong>Monthly income to invest (DCA)</strong> — how much you invest every month. Added to your portfolio at each time step in the projection.</li>
   </ul>
+  <div class="tip"><p>💡 Your existing retirement portfolio (stocks + other assets − liabilities that count toward your goal) is automatically treated as the starting value for projections. The stats card shows <strong>"Starting portfolio grows to"</strong> (when you have existing assets but no extra lump sum), <strong>"Lump sum grows to"</strong> (extra deposit only), or <strong>"Portfolio + lump sum grows to"</strong> (both). This future value is subtracted from your goal to calculate how much monthly DCA you still need.</p></div>
 
   <h3>Semi-Retirement Mode</h3>
   <p>Enable <strong>Semi-retire</strong> to model a two-phase retirement: first a period of reduced income (e.g. part-time work), then full retirement. Set:</p>
@@ -439,6 +451,7 @@
     <li><strong>Years of semi-retirement</strong> — how long the part-time phase lasts</li>
     <li><strong>% of current contributions</strong> — how much you'll still invest during the part-time phase (e.g. 30% means you invest 30% of your current monthly DCA)</li>
   </ul>
+  <div class="tip"><p>💡 In semi-retire mode the growth chart starts from your existing retirement portfolio value — not from zero — so you can see how your current wealth compounds through both phases of the plan.</p></div>
 
   <h3>Reading the Result</h3>
   <p>After the inputs are filled in, the app calculates:</p>
@@ -550,8 +563,10 @@
   <ul>
     <li>The Plan tab shows <strong>Investment Goal</strong> instead of Retirement Goal</li>
     <li>The time horizon goes up to 60 years (for long-term education or wealth transfer goals)</li>
-    <li>The Drawdown tab is hidden (not applicable for children)</li>
+    <li>The <strong>Drawdown tab is hidden</strong> — it's not applicable for children. The tab switches back to Goal automatically when you select a child profile.</li>
     <li>The goal is labelled "Target at age X" instead of "Retire at X"</li>
+    <li>The <strong>in-retirement income (4% rule) box is hidden</strong> — spending-in-retirement estimates aren't relevant for a child's goal</li>
+    <li>Sliders have <strong>flexible ranges</strong> with no enforced minimum age — suitable for newborns through teenagers</li>
     <li>Default goal is $100,000 over 20 years — suitable for an education fund</li>
   </ul>
 
